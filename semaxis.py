@@ -6,15 +6,15 @@ def cosine_similarity(vec1, vec2):
 
 def get_avg_vec(emb, word, k):
     tmp = []
-    tmp.append(emb.wv[word])
+    tmp.append(emb[word])
     for closest_word, similarity in emb.most_similar(positive=word, topn=k):
-        tmp.append(emb.wv[closest_word])
+        tmp.append(emb[closest_word])
     avg_vec = np.mean(tmp, axis=0)
     return avg_vec
 
 def transform_antonym_to_axis(emb, antonym, k):
     if k == 0:
-        return emb.wv[antonym[1]] - emb.wv[antonym[0]]
+        return emb[antonym[1]] - emb[antonym[0]]
 
     else:
         vec_antonym_1 = get_avg_vec(emb, antonym[1], k)
@@ -23,7 +23,7 @@ def transform_antonym_to_axis(emb, antonym, k):
         return vec_antonym_1 - vec_antonym_0 
 
 def project_word_on_axis(emb, word, antonym, k=10):
-    return cosine_similarity(emb.wv[word], transform_antonym_to_axis(emb, antonym, k)) 
+    return cosine_similarity(emb[word], transform_antonym_to_axis(emb, antonym, k)) 
 
 
 if __name__ == '__main__':
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     import gensim
     
 
-    EMBEDDING_PATH = "" ### Yout path to embedding file 
+    #EMBEDDING_PATH = "" ### Yout path to embedding file 
 
     ######################################################################
     ### Google News embedding (Download: https://code.google.com/archive/p/word2vec/). Note that for SemAxis, bin file needs to be converted to text file: see https://stackoverflow.com/questions/27324292/convert-word2vec-bin-file-to-text)
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     ######################################################################
     ## Reddit20M embedding (Download: https://drive.google.com/file/d/1ewmS5Uu4tWAkwWsuY8FZVgLr85vvZXye/view?usp=sharing) 
 
-    test_path = "%s/Reddit20M.cbow.300.100.txt" % (EMBEDDING_PATH)
+    test_path = './datasets/GoogleNews-vectors-negative300.bin'
     ######################################################################
 
     test_embed = gensim.models.KeyedVectors.load_word2vec_format(test_path)
