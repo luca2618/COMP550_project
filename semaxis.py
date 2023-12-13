@@ -31,7 +31,7 @@ if __name__ == '__main__':
     import gensim
     
 
-    #EMBEDDING_PATH = "" ### Yout path to embedding file 
+    EMBEDDING_PATH = "" ### Yout path to embedding file 
 
     ######################################################################
     ### Google News embedding (Download: https://code.google.com/archive/p/word2vec/). Note that for SemAxis, bin file needs to be converted to text file: see https://stackoverflow.com/questions/27324292/convert-word2vec-bin-file-to-text)
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     ######################################################################
     ## Reddit20M embedding (Download: https://drive.google.com/file/d/1ewmS5Uu4tWAkwWsuY8FZVgLr85vvZXye/view?usp=sharing) 
 
-    test_path = './datasets/GoogleNews-vectors-negative300.bin'
+    test_path = "%s/Reddit20M.cbow.300.100.txt" % (EMBEDDING_PATH)
     ######################################################################
 
     test_embed = gensim.models.KeyedVectors.load_word2vec_format(test_path)
@@ -51,4 +51,3 @@ if __name__ == '__main__':
     ## Test results (with k=3) should be: 
     ## 0.16963434219360352 with Google News embedding
     ## 0.31472429633140564 with Reddit20M embedding
-
