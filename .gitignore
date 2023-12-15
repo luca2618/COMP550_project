@@ -8,6 +8,7 @@ __pycache__/
 
 #dataset
 datasets/
+decrepit/
 
 # Distribution / packaging
 .Python
