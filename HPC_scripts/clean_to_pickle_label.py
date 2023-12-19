@@ -12,7 +12,7 @@ print("loading all reviews..")
 with open('all_cleaned_reviews_young.pkl', 'rb') as f:
     reviews = pickle.load(f)
 print("loading model..")
-file = open('important_model2.pkl', 'rb')
+file = open('important_model.pkl', 'rb')
 
 model = pickle.load(file)
 
@@ -42,7 +42,7 @@ print(len(female_reviews))
 print("length of male")
 print(len(male_reviews))
 
-with open('all_cleaned_reviews_female5.pkl', 'wb') as file:
+with open('all_cleaned_reviews_female.pkl', 'wb') as file:
     pickle.dump(female_reviews, file)
-with open('all_cleaned_reviews_male5.pkl', 'wb') as file2:
+with open('all_cleaned_reviews_male.pkl', 'wb') as file2:
     pickle.dump(male_reviews, file2)
