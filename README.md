@@ -1,8 +1,8 @@
 # COMP550_project
-
 ## Initial labelling, stats and loading of data
 Initial data labelling and preprocessing can be found /data folder
 ## HPC Scripts
+Most processing and training required large amount of ram and processing power, so they where run on a HPC-cluster (High Performance Computing)
 HPC scripts covers all high data volume processing and training of embeddings using word2vec.
 The full goodreads_reviews_young_adult.json should be provided.
 ### clean_to_pickle.py
