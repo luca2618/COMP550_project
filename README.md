@@ -23,4 +23,9 @@ HPC script specifying python script and ressources for the HPC.
 
 ## Analisys and semaxis.
 SemAxis contain the SemAxis framework functions.
+
 Plots and analisys loads the embeddings models that where trained on the hpc, and uses the SemAxis framework to make some analisys functions and create plots using the axis word found in the folder /axes.
+
+The pretrained models from our analisys can be found in the /models folder.
+They are they are all there except the entire datamodel, which requires the download of an addtional file "full_young.wordvectors.vectors.npy" which can be downloaded here:
+https://drive.google.com/file/d/1sTgbDlwCm7_DjXyJ2nmaqDpg65p457f8/view?usp=drive_link
