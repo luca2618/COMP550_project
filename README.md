@@ -1,10 +1,12 @@
 # COMP550_project
+The full goodreads_reviews_young_adult.json used for this can be found here:
+https://mengtingwan.github.io/data/goodreads.html
 ## Initial labelling, stats and loading of data
 Initial data labelling and preprocessing can be found /data folder
+Needs to include goodreads_reviews_young_adult.json
 ## HPC Scripts
 Most processing and training required large amount of ram and processing power, so they where run on a HPC-cluster (High Performance Computing)
 HPC scripts covers all high data volume processing and training of embeddings using word2vec.
-The full goodreads_reviews_young_adult.json should be provided.
 ### clean_to_pickle.py
 Cleans and preprocesses the entire dataset and compiles it to single file.
 ### Cluster_review.py
